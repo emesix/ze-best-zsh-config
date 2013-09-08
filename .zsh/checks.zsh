@@ -15,11 +15,15 @@ if [[ -x `which brew` ]]; then
     HAS_BREW=1
 fi
 
-if [[ -x `which apt-get` ]]; then
+if [[ -r /etc/debian_version ]] ; then
     HAS_APT=1
 fi
 
-if [[ -x `which yum` ]]; then
+if [[ -r /etc/redhat-release ]]; then
+    HAS_YUM=1
+fi
+
+if [[ -r /etc/arch-release ]]; then
     HAS_YUM=1
 fi
 
